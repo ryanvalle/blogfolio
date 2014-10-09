@@ -13,7 +13,7 @@ body {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	position: absolute;
+	position: fixed;
 	z-index: 999;
 	.primary {
 		display: table-cell;
@@ -34,6 +34,10 @@ body {
 		}
 		.loader {
 			padding: 10px;
+			.loading-text {
+				margin: 3px 0 0 0;
+				font-size: 10px;
+			}
 			.load-container {
 				.bar {
 					display: inline-block;

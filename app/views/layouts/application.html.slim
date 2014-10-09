@@ -8,17 +8,18 @@ html
 	  = csrf_meta_tags
 	body
 		.welcome-container#welcome-container
-		  .primary
-		    h1
-		      span.font-400 BLOGGING
-		      span.font-900 WITH
-		      span.font-400 RYAN
-		    h2
-		      span.font-400 Stuff about photography, web development, and hobbies
-		    .loader
-		      .load-container
-		      	- [1..10].each do |x|
-		        	.bar.b#{x}
+			.primary
+				h1
+					span.font-400 BLOGGING
+					span.font-900 WITH
+					span.font-400 RYAN
+				h2
+					span.font-400 Stuff about photography, web development, and hobbies
+				.loader
+					.load-container
+						-(1..10).each do |x|
+							.bar class="b#{x}"
+					.loading-text LOADING
   	.sidebar-primary
 
 		= yield

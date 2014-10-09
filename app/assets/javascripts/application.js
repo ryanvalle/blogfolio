@@ -17,13 +17,15 @@
 
 // HIDE LOADER SCREEN ONCE ASSETS ARE LOADED
 $(window).load(function() {
-	$('.loader').animate({
-		opacity: 0
-	}, 500, 'linear', function() {
-		$('#welcome-container').animate({
-				right: '100%'
-			}, 500, 'linear', function() { $('#welcome-container').remove() }
+	setTimeout(function() {
+		$('.loader').animate({
+			opacity: 0
+		}, 500, 'linear', function() {
+			$('#welcome-container').animate({
+					right: '100%'
+				}, 500, 'linear', function() { $('#welcome-container').remove() }
+			)
+			}
 		)
-		}
-	)
+	}, 2000)
 })
