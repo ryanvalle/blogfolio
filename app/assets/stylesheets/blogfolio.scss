@@ -1,0 +1,47 @@
+.welcome-container {
+	width: 100%;
+	height: 100%;
+	display: table;
+	background-image: asset-url('blogfolio/background_little_planet.jpg',image);
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	position: absolute;
+	.primary {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+		color: #fff;
+		h1, h2 {
+			margin: 0;
+			padding: 0;
+			text-shadow: 2px 2px 0 #000;
+		}
+		h1 {
+			font-size: 44px;
+		}
+		h2 {
+			text-transform: uppercase;
+			font-size: 18px;
+		}
+		.loader {
+			padding: 10px;
+			.load-container {
+				.bar {
+					display: inline-block;
+					vertical-align: middle;
+					width: 5px;
+					background: #fff;
+					margin: 0 2px;
+					@for $i from 1 through 10 {
+						&.b#{$i} {
+							-webkit-animation: loadingBars 1s ease infinite #{$i * 100}ms;
+							animation: loadingBars 1s ease infinite #{$i * 100}ms;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
