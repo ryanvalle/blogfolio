@@ -12,7 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require ckeditor-jquery
+//= require ckeditor/config
+// require_tree .
 
 
 // HIDE LOADER SCREEN ONCE ASSETS ARE LOADED

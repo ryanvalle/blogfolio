@@ -7,53 +7,6 @@ html
 	  = javascript_include_tag 'application'
 	  = csrf_meta_tags
 	body
-		.welcome-container#welcome-container
-			.primary
-				h1
-					span.font-400 RYAN
-					span.font-900 VALLE
-					span.font-300 .me
-				h2
-					span.font-300 FULL-TIME 
-					span.font-400 WEB DEVELOPER
-				h2
-					span.font-300 HOBBYIST
-					span.font-400 PHOTOGRAPHER
-				h2
-					span.font-300 AMATEUR
-					span.font-400 BLOGGER
-
-				.loader
-					.load-container
-						-(1..10).each do |x|
-							.bar class="b#{x}"
-					.loading-text LOADING
-		.sidebar-primary
-			.primary
-				.profile
-				h2
-					span.font-400 RYAN
-					span.font-900 VALLE
-					span.font-300 .me
-				h3
-					span.font-300 FULL-TIME 
-					span.font-400 WEB DEVELOPER
-				h3
-					span.font-300 HOBBYIST 
-					span.font-400 PHOTOGRAPHER
-				h3
-					span.font-300 AMATEUR 
-					span.font-400 BLOGGER
-				.description.font-300
-					| Welcome to my blogfolio site, a hybrid blog &amp; portfolio site joined into a single page experience. I'll be blogging about a variety of things from photography adventures, thoughts, opinions, and reviews about the latest gadgets, and once in a while, talk a little about my work life and write about web development related stuff.
-				.social-links
-					= link_to "https://github.com/ryanvalle", target: 'blank' do
-						= image_tag 'social/social_github.png'
-					= link_to "https://www.flickr.com/photos/ryan-philipp/", target: 'blank' do
-						= image_tag 'social/social_flickr.png'
-					= link_to "http://instagram.com/ryanvalle", target: 'blank' do
-						= image_tag 'social/social_instagram.png'
-					= link_to "http://www.linkedin.com/in/ryanvalle1", target: 'blank' do
-						= image_tag 'social/social_linked.png'
-
-		= yield
+		= render 'layouts/public_main_content' if params[:controller] != 'admin'
+		#content
+			= yield
