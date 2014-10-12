@@ -14,6 +14,7 @@ body {
 	background-position: center center;
 	background-repeat: no-repeat;
 	position: fixed;
+	top: 0;
 	z-index: 999;
 	.primary {
 		display: table-cell;
@@ -60,10 +61,15 @@ body {
 .sidebar-primary {
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	display: inline-block;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	height: 100%;
 	width: 300px;
+	overflow: auto;
+	-ms-overflow-style: none;
+	&::-webkit-scrollbar {
+		display: none;
+	}
 	@include linear-gradient(#16222A, #3A6073);
 	.primary {
 		vertical-align: middle;
@@ -105,6 +111,34 @@ body {
 			img {
 				width: 40px;
 				margin: 0 6px;
+			}
+		}
+	}
+}
+
+#content {
+	width: 100%;
+	min-height: 100%;
+	padding: 0 0 0 300px;
+	overflow: hidden;
+	.articles {
+		width: 100%;
+		padding: 10px;
+		.article {
+			width: 100%;
+			margin: 0 0 40px 0;
+			border-bottom: 1px solid #ccc;
+			.title {
+				font-size: 28px;
+				border-bottom: 1px dashed #ccc;
+			}
+			.body {
+				img {
+					margin: 0 auto;
+					display: block;
+					max-width: 100%;
+					max-height: 700px;
+				}
 			}
 		}
 	}
