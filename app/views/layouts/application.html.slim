@@ -9,6 +9,6 @@ html
 	  = javascript_include_tag 'application'
 	  = csrf_meta_tags
 	body
-		= render 'layouts/public_main_content' if params[:controller] != 'admin'
+		//= render 'layouts/public_main_content' if params[:controller] != 'admin'
 		#content
 			= yield

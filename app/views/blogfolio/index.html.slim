@@ -4,4 +4,4 @@
 			.title.font-900
 				= article.title
 			.body
-				= article.body.html_safe
+				= article.body.split('<hr />')[0].html_safe
