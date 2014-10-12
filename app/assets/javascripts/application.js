@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ckeditor-jquery
-//= require ckeditor/config
+// require ckeditor/config
 // require_tree .
 
 
@@ -31,3 +31,8 @@ $(window).load(function() {
 		)
 	}, 2000)
 })
+
+function setLink(cnumb,url) {
+	CKEDITOR.tools.callFunction(cnumb, url);
+	window.close();
+}

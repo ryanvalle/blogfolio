@@ -12,6 +12,7 @@ gem 'better_errors'
 gem 'jquery-rails'
 gem 'will_paginate-bootstrap'
 gem 'ckeditor_rails'
+gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
