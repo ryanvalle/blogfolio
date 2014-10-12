@@ -139,6 +139,14 @@ body {
 					max-width: 100%;
 					max-height: 700px;
 				}
+				pre, code {
+					font-family: "Courier New", Courier, monospace;
+					font-size: 14px;
+					span {
+						font-family: "Courier New", Courier, monospace;
+						font-size: 14px;
+					}
+				}
 			}
 		}
 	}
