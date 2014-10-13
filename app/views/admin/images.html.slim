@@ -14,7 +14,6 @@
 				th Source
 				th Delete
 		tbody
-			= will_paginate @images, params: {controller: :admin, action: :images}, renderer: BootstrapPagination::Rails
 			- @images.each do |image|
 				tr
 					td 

@@ -7,12 +7,8 @@ class AdminController < ApplicationController
 		end
 	end
 
-	def images
-		@images = Gallery.paginate(page: params[:page], per_page: 10).order("id DESC")
-	end
-
 	def articles
-		@articles = Article.paginate(page: params[:page], per_page: 10).order("id DESC")
+		@articles = Article.all.order("id DESC")
 	end
 
 	def new

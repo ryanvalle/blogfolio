@@ -12,3 +12,37 @@ html, body {
 	margin: 0;
 }
 
+#content {
+	a {
+		padding: 2px 4px;
+		border-radius: 6px;
+		color: #000;
+		text-decoration: none;
+		position: relative;
+		display: inline-block;
+		vertical-align: bottom;
+		overflow: hidden;
+		-webkit-animation: colorChangeIn 0.3s forwards;
+		animation: colorChangeIn 0.3s forwards;
+		&:before {
+			content: '';
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0%;
+			height: 100%;
+			z-index: -1;
+			-webkit-animation: backgroundSwipeOut 0.2s forwards;
+			animation: backgroundSwipeOut 0.2s forwards;
+		}
+		&:hover {
+			-webkit-animation: colorChangeOut 0.2s forwards;
+			animation: colorChangeOut 0.2s forwards;
+			&::before {
+				-webkit-animation: backgroundSwipeIn 0.2s forwards;
+				animation: backgroundSwipeIn 0.2s forwards;
+			}
+		}
+	}
+}

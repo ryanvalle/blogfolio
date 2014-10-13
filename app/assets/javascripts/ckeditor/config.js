@@ -2,6 +2,22 @@ var instance = CKEDITOR.instances['content_body'];
 
 CKEDITOR.config.extraPlugins = 'codesnippet'
 CKEDITOR.config.codeSnippet_theme = 'monokai_sublime'
+CKEDITOR.config.codeSnippet_languages = {
+	apache: 'Apache',
+	bash: 'Bash',
+	coffeescript: 'CoffeeScript',
+	css: 'CSS',
+	javascript: 'JavaScript',
+	json: 'JSON',
+	markdown: 'Markdown',
+	html: 'Markup',
+	nginx: 'Nginx',
+	objectivec: 'Objective-C',
+	php: 'PHP',
+	ruby: 'Ruby',
+	sql: 'SQL',
+	xml: 'XML'
+}
 
 CKEDITOR.config.toolbar = [
     { name: 'styles', items : ['Format' ] },

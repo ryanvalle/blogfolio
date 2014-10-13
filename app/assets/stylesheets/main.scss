@@ -127,7 +127,6 @@ body {
 		.article {
 			width: 100%;
 			margin: 0 0 40px 0;
-			border-bottom: 1px solid #ccc;
 			.title {
 				font-size: 28px;
 				border-bottom: 1px dashed #ccc;
@@ -148,6 +147,39 @@ body {
 					}
 				}
 			}
+			.share {
+				border-top: 1px solid #ccc;
+				text-align: right;
+				a {
+					font-size: 14px;
+				}
+			}
+		}
+		.return-to-home {
+			text-align: right;
+			position: relative;
+			z-index: 1;
+			a {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.pagination {
+		width: 100%;
+		position: relative;
+		z-index: 0;
+		.prevpage, .nextpage {
+			display: inline-block;
+			vertical-align: top;
+			width: 50%;
+			padding: 10px;
+		}
+		.prevpage {
+			text-align: left;
+		}
+		.nextpage {
+			text-align: right;
 		}
 	}
 }

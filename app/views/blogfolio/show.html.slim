@@ -1,0 +1,8 @@
+.articles
+	.return-to-home
+		= link_to '<< return to home', root_path
+	.article
+		.title.font-900
+			= @article.title
+		.body
+			= @article.body.gsub('<hr />', '').html_safe

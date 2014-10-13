@@ -29,10 +29,5 @@ $(window).load(function() {
 			)
 			}
 		)
-	}, 2000)
+	}, 500)
 })
-
-function setLink(cnumb,url) {
-	CKEDITOR.tools.callFunction(cnumb, url);
-	window.close();
-}

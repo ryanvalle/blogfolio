@@ -6,7 +6,6 @@
 			= flash[:notice]
 
 	h1 Manage Articles
-	= will_paginate @articles, renderer: BootstrapPagination::Rails
 	table.table.table-striped
 		thead
 			tr
@@ -25,8 +24,8 @@
 						= article.title
 					td
 						= truncate(strip_tags(article.body), length: 150, omission: '...')
-					/td
-						= link_to "View Article", show_article_path(article), class: "btn btn-primary", target:"blank"
+					td
+						= link_to "View Article", show_blog_path(article.address), class: "btn btn-primary", target:"blank"
 					td
 						= link_to "Edit Article", edit_admin_path(article.id), class: "btn btn-warning"
 					td style="text-align: center"

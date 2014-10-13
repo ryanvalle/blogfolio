@@ -21,3 +21,84 @@
 		padding: 0 0 0 0;
 	}
 }
+
+@-webkit-keyframes colorChangeIn {
+	from {
+		color: #F00;
+	}
+	to {
+		color: #000;
+	}
+}
+
+@keyframes colorChangeIn {
+	from {
+		color: #F00;
+	}
+	to {
+		color: #000;
+	}
+}
+@-webkit-keyframes colorChangeOut {
+	from {
+		color: #000;
+	}
+	to {
+		color: #F00;
+	}
+}
+
+@keyframes colorChangeOut {
+	from {
+		color: #000;
+	}
+	to {
+		color: #F00;
+	}
+}
+
+
+
+@-webkit-keyframes backgroundSwipeIn {
+	from {
+		width: 0px;
+		background: #DFEAFF;
+	}
+	to {
+		width: 100%;
+		background: #DFEAFF;
+	}
+}
+
+@keyframes backgroundSwipeIn {
+	from {
+		width: 0px;
+		background: #DFEAFF;
+	}
+	to {
+		width: 100%;
+		background: #DFEAFF;
+	}
+}
+
+@-webkit-keyframes backgroundSwipeOut {
+	from {
+		width: 100%;
+		background: #DFEAFF;
+	}
+	to {
+		width: 0px;
+		background: #DFEAFF;
+	}
+}
+
+@keyframes backgroundSwipeOut {
+	from {
+		width: 100%;
+		background: #DFEAFF;
+	}
+	to {
+		width: 0px;
+		background: #DFEAFF;
+	}
+}

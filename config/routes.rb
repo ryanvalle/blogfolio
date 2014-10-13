@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'blogfolio#index'
 
+  get '/article/:address' => 'blogfolio#show', as: 'show_blog'
+
   resources :admin, :path => "admin", only: [:index, :new, :create]
   	post '/session' => 'admin#auth', as: "session"
   	get '/signout' => 'admin#signout', as: "admin_signout"
