@@ -19,7 +19,7 @@
 
 // HIDE LOADER SCREEN ONCE ASSETS ARE LOADED
 $(window).load(function() {
-	setTimeout(function() {
+	/*setTimeout(function() {
 		$('.loader').animate({
 			opacity: 0
 		}, 500, 'linear', function() {
@@ -29,5 +29,11 @@ $(window).load(function() {
 			)
 			}
 		)
-	}, 500)
+	}, 500)*/
+	setTimeout(function() {
+		$('#welcome-container').addClass('loaderAnimateOut')
+		$('#welcome-container').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+			$('#welcome-container').remove()
+		})
+	}, 1000)
 })

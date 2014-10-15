@@ -22,6 +22,24 @@
 	}
 }
 
+@-webkit-keyframes welcomeAnimateOut {
+	from {
+		right: 0;
+	}
+	to {
+		right: 100%;
+	}
+}
+
+@keyframes welcomeAnimateOut {
+	from {
+		right: 0;
+	}
+	to {
+		right: 100%;
+	}
+}
+
 @-webkit-keyframes colorChangeIn {
 	from {
 		color: #F00;
