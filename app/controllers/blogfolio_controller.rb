@@ -1,6 +1,6 @@
 class BlogfolioController < ApplicationController
 	def index
-		per_page = 5
+		per_page = 25
 		if params[:page].present?
 			start_at = (params[:page].to_i * per_page.to_i) - per_page.to_i
 			@articles = Article.all.where(status: 1).limit(per_page).offset(start_at).order("id DESC")

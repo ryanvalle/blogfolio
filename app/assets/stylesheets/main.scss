@@ -271,7 +271,7 @@ body {
 			left: 0;
 			&::before {
 				content: '<< ';
-				diisplay: inline-block;
+				display: inline-block;
 				position: relative;
 				top: -2px;
 				font-weight: 300;

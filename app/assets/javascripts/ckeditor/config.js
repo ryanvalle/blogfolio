@@ -19,6 +19,8 @@ CKEDITOR.config.codeSnippet_languages = {
 	xml: 'XML'
 }
 
+CKEDITOR.config.height = 400;
+
 CKEDITOR.config.toolbar = [
     { name: 'styles', items : ['Format' ] },
     { name: 'basicstyles', items : [ 'Bold','Italic','Strike','-','RemoveFormat' ] },

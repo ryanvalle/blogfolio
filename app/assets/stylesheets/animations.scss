@@ -57,6 +57,41 @@
 	}
 }
 
+@-webkit-keyframes colorChangeInWhite {
+	from {
+		color: #F00;
+	}
+	to {
+		color: #FFF;
+	}
+}
+
+@keyframes colorChangeInWhite {
+	from {
+		color: #F00;
+	}
+	to {
+		color: #FFF;
+	}
+}
+@-webkit-keyframes colorChangeOutWhite {
+	from {
+		color: #FFF;
+	}
+	to {
+		color: #F00;
+	}
+}
+
+@keyframes colorChangeOutWhite {
+	from {
+		color: #FFF;
+	}
+	to {
+		color: #F00;
+	}
+}
+
 @-webkit-keyframes backgroundSwipeInLR {
 	from {
 		width: 0px;

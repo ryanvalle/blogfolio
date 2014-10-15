@@ -8,7 +8,15 @@ class AdminController < ApplicationController
 	end
 
 	def articles
-		@articles = Article.all.order("id DESC")
+		per_page = 25
+		if params[:page].present?
+			start_at = (params[:page].to_i * per_page.to_i) - per_page.to_i
+			@articles = Article.all.where(status: 1).limit(per_page).offset(start_at).order("id DESC")
+			@next_articles = Article.all.where(status: 1).limit(per_page).offset(start_at + per_page).order("id DESC")
+		else
+			@articles = Article.all.where(status: 1).limit(per_page).order("id DESC")
+			@next_articles = Article.all.where(status: 1).limit(per_page).offset(1 + per_page).order("id DESC")
+		end
 	end
 
 	def new
@@ -54,7 +62,7 @@ class AdminController < ApplicationController
 	
 	def signout
 		sign_out
-		redirect_to root_path
+		redirect_to admin_index_path
 	end
 
 	private
