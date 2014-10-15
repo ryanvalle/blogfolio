@@ -1,0 +1,23 @@
+$break-mobile: 320px;
+$break-mobile-portrait: 500px;
+$break-tablet-portrait: 768px;
+$break-tablet: 1024px;
+$break-desktop: 1100px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen { @content; }
+  }
+  @else if $media == mobile-portrait {
+    @media only screen and (min-width: $break-mobile-portrait) { @content; }
+  }
+  @else if $media == tablet-portrait {
+    @media only screen and (min-width: $break-tablet-portrait) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-tablet) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-desktop) { @content; }
+  }
+}

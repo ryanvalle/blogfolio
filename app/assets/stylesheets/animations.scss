@@ -57,9 +57,7 @@
 	}
 }
 
-
-
-@-webkit-keyframes backgroundSwipeIn {
+@-webkit-keyframes backgroundSwipeInLR {
 	from {
 		width: 0px;
 		background: #DFEAFF;
@@ -70,7 +68,7 @@
 	}
 }
 
-@keyframes backgroundSwipeIn {
+@keyframes backgroundSwipeInLR {
 	from {
 		width: 0px;
 		background: #DFEAFF;
@@ -81,7 +79,7 @@
 	}
 }
 
-@-webkit-keyframes backgroundSwipeOut {
+@-webkit-keyframes backgroundSwipeOutLR {
 	from {
 		width: 100%;
 		background: #DFEAFF;
@@ -92,13 +90,57 @@
 	}
 }
 
-@keyframes backgroundSwipeOut {
+@keyframes backgroundSwipeOutLR {
 	from {
 		width: 100%;
 		background: #DFEAFF;
 	}
 	to {
 		width: 0px;
+		background: #DFEAFF;
+	}
+}
+
+@-webkit-keyframes backgroundSwipeInTB {
+	from {
+		height: 0%;
+		background: #DFEAFF;
+	}
+	to {
+		height: 100%;
+		background: #DFEAFF;
+	}
+}
+
+@keyframes backgroundSwipeInTB {
+	from {
+		height: 0%;
+		background: #DFEAFF;
+	}
+	to {
+		height: 100%;
+		background: #DFEAFF;
+	}
+}
+
+@-webkit-keyframes backgroundSwipeOutTB {
+	from {
+		height: 100%;
+		background: #DFEAFF;
+	}
+	to {
+		height: 0%;
+		background: #DFEAFF;
+	}
+}
+
+@keyframes backgroundSwipeOutTB {
+	from {
+		height: 100%;
+		background: #DFEAFF;
+	}
+	to {
+		height: 0%;
 		background: #DFEAFF;
 	}
 }

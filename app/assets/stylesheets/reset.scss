@@ -33,15 +33,15 @@ html, body {
 			width: 0%;
 			height: 100%;
 			z-index: -1;
-			-webkit-animation: backgroundSwipeOut 0.2s forwards;
-			animation: backgroundSwipeOut 0.2s forwards;
+			-webkit-animation: backgroundSwipeOutLR 0.2s forwards;
+			animation: backgroundSwipeOutLR 0.2s forwards;
 		}
 		&:hover {
 			-webkit-animation: colorChangeOut 0.2s forwards;
 			animation: colorChangeOut 0.2s forwards;
 			&::before {
-				-webkit-animation: backgroundSwipeIn 0.2s forwards;
-				animation: backgroundSwipeIn 0.2s forwards;
+				-webkit-animation: backgroundSwipeInLR 0.2s forwards;
+				animation: backgroundSwipeInLR 0.2s forwards;
 			}
 		}
 	}
