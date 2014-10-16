@@ -187,6 +187,8 @@ body {
 	width: 100%;
 	min-height: 100%;
 	overflow: hidden;
+	position: relative;
+	z-index: 0;
 	@include respond-to(mobile) {
 		padding: 0 0 0 45px;
 	}
@@ -195,6 +197,14 @@ body {
 	}
 	@include respond-to(tablet-portrait) {
 		padding: 0 0 0 300px;
+	}
+	&.contentOut {
+		-webkit-animation: contentOut 0.5s forwards; 
+		animation: contentOut 0.5s forwards; 
+	}
+	&.contentIn {
+		-webkit-animation: contentIn 0.5s forwards; 
+		animation: contentIn 0.5s forwards; 
 	}
 	.articles {
 		width: 100%;

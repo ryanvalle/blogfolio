@@ -18,22 +18,43 @@
 
 
 // HIDE LOADER SCREEN ONCE ASSETS ARE LOADED
-$(window).load(function() {
-	/*setTimeout(function() {
-		$('.loader').animate({
-			opacity: 0
-		}, 500, 'linear', function() {
-			$('#welcome-container').animate({
-					right: '100%'
-				}, 500, 'linear', function() { $('#welcome-container').remove() }
+if (window.history) {
+	$(window).load(function() {
+		setTimeout(function() {
+			$('.loader').animate({
+				opacity: 0
+			}, 500, 'linear', function() {
+				$('#welcome-container').addClass('loaderAnimateOut')
+				$('#welcome-container').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+					$('#welcome-container').remove()
+				})
+				}
 			)
+		}, 500)
+	})
+
+	// Prevent default on link clicks in #content frame
+	$(function() {
+		$('#content').on('click','a',function(e) {
+			var reqPage = $(this).attr('href')
+			window.history.pushState('','',reqPage)
+			getRequestedPage(reqPage)
+			e.preventDefault()
+			function getRequestedPage(page) {
+				$('#content').removeClass('contentIn').addClass('contentOut')
+				$('#content').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+					$.ajax({
+						url: page,
+						dataType: 'script',
+						success: function() {
+							setTimeout(function(){$('#content').removeClass('contentOut').addClass('contentIn')}, 500)
+							$('#content').unbind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd')
+						}
+					})
+				})
 			}
-		)
-	}, 500)*/
-	setTimeout(function() {
-		$('#welcome-container').addClass('loaderAnimateOut')
-		$('#welcome-container').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
-			$('#welcome-container').remove()
 		})
-	}, 1000)
-})
+	})
+} else {
+	$(document).ready(function(){$('#welcome-container').remove()})
+}

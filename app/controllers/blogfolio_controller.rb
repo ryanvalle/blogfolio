@@ -1,4 +1,5 @@
 class BlogfolioController < ApplicationController
+	skip_before_action :verify_authenticity_token
 	def index
 		per_page = 25
 		if params[:page].present?
@@ -15,9 +16,17 @@ class BlogfolioController < ApplicationController
 				render 'no_articles'
 			end
 		end
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 
 	def show
 		@article = Article.find_by_address(params[:address])
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 end

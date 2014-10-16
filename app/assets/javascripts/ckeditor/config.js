@@ -33,5 +33,4 @@ CKEDITOR.config.toolbar = [
 
 CKEDITOR.config.allowedContent = 'h1 h2 h3 h4 h5 p b em s table tr td thead tbody ul ol li a span pre code div hr img[src,alt, style]'; 
 CKEDITOR.config.filebrowserUploadUrl = '/admin/asset-upload?type=Files&dir=' + encodeURIComponent('content/images')
-//CKEDITOR.config.contentsCss = '/fonts.css';
 

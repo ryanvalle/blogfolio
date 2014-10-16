@@ -1,0 +1,11 @@
+.articles
+	- @articles.each do |article|
+		.article
+			.title
+				= link_to article.title, show_blog_path(article.address), class: 'font-900'
+			.body
+				= article.body.split('<hr />')[0].html_safe
+			.share
+				= link_to 'read more', show_blog_path(article.address), class: 'font-300'
+
+= render 'layouts/pagination'

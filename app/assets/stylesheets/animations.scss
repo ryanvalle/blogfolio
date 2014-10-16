@@ -22,6 +22,42 @@
 	}
 }
 
+@-webkit-keyframes contentOut {
+	from {
+		left: 0;
+	}
+	to {
+		left: 100%;
+	}
+}
+
+@keyframes contentOut {
+	from {
+		left: 0;
+	}
+	to {
+		left: 100%;
+	}
+}
+
+@-webkit-keyframes contentIn {
+	from {
+		left: 100%;
+	}
+	to {
+		left: 0%;
+	}
+}
+
+@keyframes contentIn {
+	from {
+		left: 100%;
+	}
+	to {
+		left: 0%;
+	}
+}
+
 @-webkit-keyframes welcomeAnimateOut {
 	from {
 		right: 0;
