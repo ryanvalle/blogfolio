@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 		get '/admin/articles' => "admin#articles", as: "articles_admin"
 		get '/admin/edit/:id' => "admin#edit", as: "edit_admin"
 		patch '/admin/update' => 'admin#update', as: 'update_admin'
+		get '/admin/password' => 'admin#password', as: "password_admin"
+		post '/admin/update-password' => 'admin#password_update', as: "password_update"
+		post '/admin/update-user' => 'admin#user_update', as: "user_update"
 
 	resources :asset, :path => "asset"
 		post '/admin/asset-upload' => "asset#create", as: "create_gallery"

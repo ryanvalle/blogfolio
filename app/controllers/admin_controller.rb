@@ -59,6 +59,41 @@ class AdminController < ApplicationController
 			redirect_to admin_index_path
 		end
 	end
+
+	def password
+	end
+
+	def password_update
+		if params[:user][:password].present? && params[:user][:password_confirmation].present?
+			if current_user && current_user.authenticate(params[:user][:current_pw])
+				@current_user = User.find(current_user)
+				if @current_user.update_attributes(update_user)
+					flash[:notice] = "Successfully updated password"
+				else
+					flash[:notice] = "Failed to update password"
+				end
+			else
+				flash[:notice] = "Failed to authenticate old password"
+			end
+		else
+			flash[:notice] = "New password and confirmation must not be blank"
+		end
+			redirect_to password_admin_path
+	end
+
+	def user_update
+		if current_user && current_user.authenticate(params[:user][:password])
+			@current_user = User.find(current_user)
+			if @current_user.update_attributes(update_user)
+				flash[:notice] = "Successfully updated username"
+			else
+				flash[:notice] = "Failed to update username"
+			end
+		else
+			flash[:notice] = "Failed to authenticate"
+		end
+		redirect_to password_admin_path
+	end
 	
 	def signout
 		sign_out
@@ -75,5 +110,9 @@ class AdminController < ApplicationController
 
 		def article_params
 			params.require(:article).permit(:id, :title, :address, :body, :user_id, :status, :gallery_id, :exifshow)
+		end
+
+		def update_user
+			params.require(:user).permit(:name, :password, :password_confirmation)
 		end
 end

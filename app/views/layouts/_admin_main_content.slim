@@ -8,8 +8,8 @@
 		- if signed_in?
 			= link_to "Manage Articles", articles_admin_path
 			= link_to "Create Article", new_admin_path
-			= link_to "Asset Manager", '#'
-			= link_to "Application Manager", '#'
+			= link_to "Asset Manager (Coming Soon)", '#'
+			= link_to "Password Manager", password_admin_path
 			= link_to "Sign Out", admin_signout_path
 		- else
 			= link_to "Log in to view admin", '#', onclick: 'return false;'
