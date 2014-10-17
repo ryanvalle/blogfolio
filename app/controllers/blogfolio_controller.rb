@@ -8,17 +8,23 @@ class BlogfolioController < ApplicationController
 			@next_articles = Article.all.where(status: 1).limit(per_page).offset(start_at + per_page).order("id DESC")
 			if @articles.count == 0
 					render 'page_blank'
+			else
+				respond_to do |format|
+					format.html
+					format.js
+				end
 			end
 		else
 			@articles = Article.all.where(status: 1).limit(per_page).order("id DESC")
 			@next_articles = Article.all.where(status: 1).limit(per_page).offset(1 + per_page).order("id DESC")
 			if @articles.count == 0
 				render 'no_articles'
+			else
+				respond_to do |format|
+					format.html
+					format.js
+				end
 			end
-		end
-		respond_to do |format|
-			format.html
-			format.js
 		end
 	end
 
