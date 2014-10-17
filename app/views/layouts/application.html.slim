@@ -3,9 +3,27 @@ html
 	head
 	  title 
 	  	= @title ? @title : 'RYANVALLE.me'
-	  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900', type: 'text/css'
 	  - if params[:controller] != 'admin'
 		  meta name="viewport" content="width=device-width, initial-scale=1,max-scale=1, user-scalable=no"
+	  meta name="google-site-verification" content="YJNLPHtoBoATfSQxi5Qds2zEn93uVxEXBkwyToUP938"
+	  meta property="og:title" content="RyanValle.me"
+		meta property="og:type" content="website"
+		meta property="og:url" content="http://ryanvalle.me"
+
+		meta property="og:site_name" content="RyanValle.me"
+		meta property="og:description" content="Welcome to my blog-folio, a hybrid blog &amp; portfolio site joined into a single page experience. I'll be blogging about a variety of things from photography adventures, thoughts, opinions, and reviews about the latest gadgets, and once in a while, talk a little about my work life and write about web development related stuff."
+		meta name="alexaVerifyID" content="UgQfL4PgxeOBmcz-pjWcGSteoZ4" 
+		meta name="robots" content="index,follow"
+		meta name="Revisit-After" content="7 days" 
+		meta name="city" content="Los Angeles" 
+		meta name="country" content="United States (USA)" 
+		meta name="state" content="CA" 
+		meta name="zip" content="91343" 
+		meta name="subject" content="Blogger" 
+		meta name="author" content="Ryan Valle" 
+		meta name="copyright" content="Ryan Valle"
+		link rel="icon" href="#{image_path('favicon.png')}" type="image/x-icon" 
+	  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900', type: 'text/css'
 	  = stylesheet_link_tag 'prism'
 	  = stylesheet_link_tag 'application'
 	  = javascript_include_tag 'prism'
