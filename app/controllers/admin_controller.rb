@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-	before_filter :signed_in_user, only: [:show, :new, :edit, :update,:create, :articles]
+	before_filter :signed_in_user, only: [:show, :new, :edit, :update,:create, :articles, :password, :password_update, :user_update]
 
 	def index
 		if signed_in?
