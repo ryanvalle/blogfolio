@@ -1,1 +1,2 @@
 $('#content').html("<%= escape_javascript(render partial: 'show_partial') %>")
+$(document).prop('title',"<%= @title ? @title : 'RYANVALLE.me' %>")

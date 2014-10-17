@@ -1,7 +1,8 @@
 doctype html
 html
 	head
-	  title BlogFolio
+	  title 
+	  	= @title ? @title : 'RYANVALLE.me'
 	  = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900', type: 'text/css'
 	  - if params[:controller] != 'admin'
 		  meta name="viewport" content="width=device-width, initial-scale=1,max-scale=1, user-scalable=no"

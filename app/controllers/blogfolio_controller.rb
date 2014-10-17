@@ -30,6 +30,7 @@ class BlogfolioController < ApplicationController
 
 	def show
 		@article = Article.find_by_address(params[:address])
+		@title = "#{@article.title} | RYANVALLE.me"
 		respond_to do |format|
 			format.html
 			format.js
