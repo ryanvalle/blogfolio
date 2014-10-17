@@ -11,11 +11,11 @@ class AdminController < ApplicationController
 		per_page = 25
 		if params[:page].present?
 			start_at = (params[:page].to_i * per_page.to_i) - per_page.to_i
-			@articles = Article.all.where(status: 1).limit(per_page).offset(start_at).order("id DESC")
-			@next_articles = Article.all.where(status: 1).limit(per_page).offset(start_at + per_page).order("id DESC")
+			@articles = Article.all.limit(per_page).offset(start_at).order("id DESC")
+			@next_articles = Article.all.limit(per_page).offset(start_at + per_page).order("id DESC")
 		else
-			@articles = Article.all.where(status: 1).limit(per_page).order("id DESC")
-			@next_articles = Article.all.where(status: 1).limit(per_page).offset(1 + per_page).order("id DESC")
+			@articles = Article.all.limit(per_page).order("id DESC")
+			@next_articles = Article.all.limit(per_page).offset(1 + per_page).order("id DESC")
 		end
 	end
 
@@ -28,6 +28,8 @@ class AdminController < ApplicationController
 	end
 
 	def create
+		params[:article][:address] = params[:article][:address].gsub(/ /,'-')
+		debugger
 		article_new = Article.new(article_params)
 		if article_new.save
 			redirect_to admin_index_path
