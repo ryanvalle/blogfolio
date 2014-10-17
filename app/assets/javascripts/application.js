@@ -54,6 +54,26 @@ if (window.history) {
 				})
 			}
 		})
+
+		$('#content').on('touchend','a',function(e) {
+			var reqPage = $(this).attr('href')
+			window.history.pushState('','',reqPage)
+			getRequestedPage(reqPage)
+			e.preventDefault()
+			function getRequestedPage(page) {
+				$('#content').removeClass('contentIn').addClass('contentOut')
+				$('#content').bind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function() {
+					$.ajax({
+						url: page,
+						dataType: 'script',
+						success: function() {
+							setTimeout(function(){$('#content').removeClass('contentOut').addClass('contentIn')}, 500)
+							$('#content').unbind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd')
+						}
+					})
+				})
+			}
+		})
 	})
 } else {
 	$(document).ready(function(){$('#welcome-container').remove()})
