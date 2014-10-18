@@ -8,7 +8,7 @@ class AssetController < ApplicationController
 	def create
 		@image = Asset.new(file: params[:upload])
 		if @image.save
-			render inline: "<script>window.parent.CKEDITOR.tools.callFunction(#{params[:CKEditorFuncNum]},'#{@image.file.md}');</script>".html_safe
+			render inline: "<script>window.parent.CKEDITOR.tools.callFunction(#{params[:CKEditorFuncNum]},'#{@image.file}');</script>".html_safe
 		else 
 			render json: @image, status: "500"
 		end
