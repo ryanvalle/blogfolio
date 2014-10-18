@@ -31,6 +31,6 @@ CKEDITOR.config.toolbar = [
     { name: 'tools', items : [ 'Source' , 'CodeSnippet', 'HorizontalRule'] },
 ];
 
-CKEDITOR.config.allowedContent = 'h1 h2 h3 h4 h5 p b em s table tr td thead tbody ul ol li a span pre code div hr img[src,alt, style]'; 
+CKEDITOR.config.allowedContent = 'h1 h2 h3 h4 h5 p b em s table tr td thead tbody ul ol li span pre code div hr img[src,alt, style]; a[!href]'; 
 CKEDITOR.config.filebrowserUploadUrl = '/admin/asset-upload?type=Files&dir=' + encodeURIComponent('content/images')
 
