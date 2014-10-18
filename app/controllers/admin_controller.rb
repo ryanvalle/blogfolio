@@ -29,7 +29,6 @@ class AdminController < ApplicationController
 
 	def create
 		params[:article][:address] = params[:article][:address].gsub(/ /,'-')
-		debugger
 		article_new = Article.new(article_params)
 		if article_new.save
 			redirect_to admin_index_path
