@@ -6,3 +6,5 @@
 			= @article.title
 		.body
 			= @article.body.gsub('<hr />', '').html_safe
+	.return-to-home
+		= link_to '<< return to home', root_path

@@ -48,6 +48,7 @@ if (window.history) {
 						dataType: 'script',
 						success: function() {
 							setTimeout(function(){$('#content').removeClass('contentOut').addClass('contentIn')}, 500)
+							$(document).scrollTop(0)
 							$('#content').unbind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd')
 						}
 					})
@@ -68,6 +69,7 @@ if (window.history) {
 						dataType: 'script',
 						success: function() {
 							setTimeout(function(){$('#content').removeClass('contentOut').addClass('contentIn')}, 500)
+							$(document).scrollTop(0)
 							$('#content').unbind('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd')
 						}
 					})
