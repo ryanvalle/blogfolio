@@ -241,6 +241,8 @@ body {
 					display: block;
 					max-width: 100%;
 					max-height: 700px;
+					border: 3px solid #fff;
+					box-shadow: 0 0 10px rgba(0,0,0,0.8);
 				}
 				pre, code {
 					font-family: "Courier New", Courier, monospace;
