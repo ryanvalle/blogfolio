@@ -32,7 +32,6 @@
 				data: {"id":$(this).data('assetid')},
 				url: "#{destroy_asset_path}",
 				success: function(data) {
-				console.log(data)
 					$('#asset-row-'+data.id).remove()
 					$('.container').prepend('<div class="alert alert-success">Successfully deleted file #' + data.id + ' (' + data.file.url + ')</div>')
 				},
