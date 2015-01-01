@@ -16,4 +16,5 @@ Rails.application.routes.draw do
 
 	resources :asset, :path => "asset"
 		post '/admin/asset-upload' => "asset#create", as: "create_gallery"
+		delete '/admin/asset-destroy' => 'asset#destroy', as: 'destroy_asset'
 end

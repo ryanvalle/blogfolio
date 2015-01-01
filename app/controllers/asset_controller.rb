@@ -15,9 +15,13 @@ class AssetController < ApplicationController
 	end
 
 	def destroy
-		@image = Gallery.find(params[:id])
-		@image.destroy
-		redirect_to assets_admin_path, notice: "#{@image.name} was deleted"
+		@image = Asset.find(params[:id])
+		if signed_in?
+			@image.destroy
+			render json: @image, status: :ok
+		else
+			render json: @image, status: :unauthorized
+		end
 	end
 
 	private

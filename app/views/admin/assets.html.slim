@@ -9,18 +9,35 @@
 				th Delete
 		tbody
 			- @assets.each do |asset|
-				tr
+				tr id='asset-row-#{asset.id}'
 					td
 						= asset.id
-					td
+					td.image-preview
 						= image_tag asset.file, class: "image_preview"
-					td
+					td.asset-url
 						= text_area_tag "asset_url", asset.file, class: "asset_url"
-					td
-						= link_to "X", "#"
+					td.delete-button
+						button.delete_asset data-assetid="#{asset.id}"
+							| X
 
 - content_for :custom
 	javascript:
 		$('.asset_url').click(function() {
 			$(this).select()
+		})
+		$('.delete_asset').click(function() {
+			$('.alert').remove()
+			$.ajax({
+				type: 'DELETE',
+				data: {"id":$(this).data('assetid')},
+				url: "#{destroy_asset_path}",
+				success: function(data) {
+				console.log(data)
+					$('#asset-row-'+data.id).remove()
+					$('.container').prepend('<div class="alert alert-success">Successfully deleted file #' + data.id + ' (' + data.file.url + ')</div>')
+				},
+				error: function(data) {
+					$('.container').prepend('<div class="alert alert-error">Error deleting file #' + data.responseJSON.id + '</div>')
+				}
+			})
 		})
