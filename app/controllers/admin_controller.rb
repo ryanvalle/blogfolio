@@ -20,7 +20,7 @@ class AdminController < ApplicationController
 	end
 
 	def assets
-		@assets = Asset.all
+		@assets = Asset.all.order('id DESC')
 	end
 
 	def new
