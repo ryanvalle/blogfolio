@@ -8,7 +8,7 @@
 		- if signed_in?
 			= link_to "Manage Articles", articles_admin_path
 			= link_to "Create Article", new_admin_path
-			= link_to "Asset Manager (Coming Soon)", '#'
+			= link_to "Asset Manager", assets_admin_path
 			= link_to "Password Manager", password_admin_path
 			= link_to "Sign Out", admin_signout_path
 		- else

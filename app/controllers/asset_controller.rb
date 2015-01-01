@@ -17,7 +17,7 @@ class AssetController < ApplicationController
 	def destroy
 		@image = Gallery.find(params[:id])
 		@image.destroy
-		redirect_to images_admin_path, notice: "#{@image.name} was deleted"
+		redirect_to assets_admin_path, notice: "#{@image.name} was deleted"
 	end
 
 	private

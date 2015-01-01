@@ -234,6 +234,18 @@ body {
 					&:nth-child(1),&:nth-child(2),&:nth-child(4),&:nth-child(5),&:nth-child(6) {
 						text-align: center;
 					}
+					.image_preview {
+						width: 200px;
+					}
+					.asset_url {
+						-webkit-box-sizing: border-box;
+						-moz-box-sizing: border-box;
+						box-sizing: border-box;
+						width: 100%;
+						padding: 5px;
+						outline: 0;
+						resize: none;
+					}
 				}
 			}
 		}

@@ -1,0 +1,26 @@
+.container
+	h1 Asset Manager
+	table.table.table-striped
+		thead
+			tr
+				th ID
+				th Image Preview
+				th URL
+				th Delete
+		tbody
+			- @assets.each do |asset|
+				tr
+					td
+						= asset.id
+					td
+						= image_tag asset.file, class: "image_preview"
+					td
+						= text_area_tag "asset_url", asset.file, class: "asset_url"
+					td
+						= link_to "X", "#"
+
+- content_for :custom
+	javascript:
+		$('.asset_url').click(function() {
+			$(this).select()
+		})

@@ -19,6 +19,10 @@ class AdminController < ApplicationController
 		end
 	end
 
+	def assets
+		@assets = Asset.all
+	end
+
 	def new
 		@article = Article.new
 	end
