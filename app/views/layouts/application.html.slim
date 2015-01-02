@@ -12,7 +12,8 @@ html
 
 		meta property="og:site_name" content="RyanValle.me"
 		meta property="og:description" content="#{@meta[:description]}"
-		meta property="og:image" content="#{@meta[:ogimage]}"
+		- if @meta[:ogimage].present?
+			meta property="og:image" content="#{@meta[:ogimage]}"
 		meta name="alexaVerifyID" content="UgQfL4PgxeOBmcz-pjWcGSteoZ4" 
 		meta name="robots" content="index,follow"
 		meta name="Revisit-After" content="7 days" 
