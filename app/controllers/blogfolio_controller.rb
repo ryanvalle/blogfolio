@@ -31,6 +31,12 @@ class BlogfolioController < ApplicationController
 	def show
 		@article = Article.find_by_address(params[:address])
 		@title = "#{@article.title} | RyanValle.me"
+		@meta = {
+	  	title: @article.title,
+	  	url: show_blog_url(params[:address]),
+	  	description: view_context.strip_tags(@article.body.split('<hr />')[0]),
+	  }
+
 		respond_to do |format|
 			format.html
 			format.js

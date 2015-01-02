@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 		post '/admin/update-password' => 'admin#password_update', as: "password_update"
 		post '/admin/update-user' => 'admin#user_update', as: "user_update"
 
-	resources :asset, :path => "asset"
+	resources :asset, :path => "gallery"
 		post '/admin/asset-upload' => "asset#create", as: "create_gallery"
 		delete '/admin/asset-destroy' => 'asset#destroy', as: 'destroy_asset'
 end

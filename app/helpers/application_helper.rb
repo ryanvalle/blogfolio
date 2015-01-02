@@ -28,4 +28,8 @@ module ApplicationHelper
 			render inline: "<div class='prevpage'>#{(link_to copy, articles_admin_path(page: page), class: 'font-300')}</div>"
 		end
 	end
+
+	def get_image_url(image)
+		view_context.image_url(image)
+	end
 end
