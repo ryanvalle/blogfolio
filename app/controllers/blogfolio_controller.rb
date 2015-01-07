@@ -1,7 +1,7 @@
 class BlogfolioController < ApplicationController
 	skip_before_action :verify_authenticity_token
 	def index
-		per_page = 25
+		per_page = 10
 		if params[:page].present?
 			start_at = (params[:page].to_i * per_page.to_i) - per_page.to_i
 			@articles = Article.all.where(status: 1).limit(per_page).offset(start_at).order("id DESC")
