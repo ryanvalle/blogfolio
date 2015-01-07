@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def nextPage(copy) 
-		page = params[:page] ? (params[:page].to_i + 1) : 2
+		page = params[:page].present? ? (params[:page].to_i + 1) : 2
 		next_article = @next_articles.present? ? @next_articles.count : 0
 		if next_article > 0 && page > 0
 			render inline: "<div class='nextpage'>#{(link_to copy, root_path(page: page), class: 'font-300')}</div>"

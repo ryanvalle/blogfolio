@@ -16,7 +16,8 @@ class BlogfolioController < ApplicationController
 			end
 		else
 			@articles = Article.all.where(status: 1).limit(per_page).order("id DESC")
-			@next_articles = Article.all.where(status: 1).limit(per_page).offset(1 + per_page).order("id DESC")
+			@next_articles = Article.all.where(status: 1).limit(per_page).offset(0 + per_page).order("id DESC")
+			debugger
 			if @articles.count == 0
 				render 'no_articles'
 			else
