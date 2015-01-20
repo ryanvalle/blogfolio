@@ -17,7 +17,6 @@ class BlogfolioController < ApplicationController
 		else
 			@articles = Article.all.where(status: 1).limit(per_page).order("id DESC")
 			@next_articles = Article.all.where(status: 1).limit(per_page).offset(0 + per_page).order("id DESC")
-			debugger
 			if @articles.count == 0
 				render 'no_articles'
 			else
@@ -36,6 +35,7 @@ class BlogfolioController < ApplicationController
 	  	title: @article.title,
 	  	url: show_blog_url(params[:address]),
 	  	description: view_context.strip_tags(@article.body.split('<hr />')[0]),
+	  	ogimage: get_image_url(@article.seo_image)
 	  }
 
 		respond_to do |format|

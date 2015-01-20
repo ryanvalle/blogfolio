@@ -114,7 +114,7 @@ class AdminController < ApplicationController
 		end
 
 		def article_params
-			params.require(:article).permit(:id, :title, :address, :body, :user_id, :status, :gallery_id, :exifshow)
+			params.require(:article).permit(:id, :title, :address, :body, :user_id, :status, :seo_image)
 		end
 
 		def update_user

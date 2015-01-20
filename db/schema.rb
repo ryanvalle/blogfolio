@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013013825) do
+ActiveRecord::Schema.define(version: 20150120024826) do
 
   create_table "articles", force: true do |t|
     t.text     "title"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20141013013825) do
     t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "seo_image"
   end
 
   create_table "assets", force: true do |t|

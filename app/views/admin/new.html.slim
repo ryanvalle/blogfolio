@@ -6,6 +6,9 @@
 			= f.text_field :title, class: "form-control", placeholder: 'Blog Title'
 		.fieldgrp
 			= f.text_field :address, class: "form-control", placeholder: 'Vanity Address (REQUIRED)'
+		.fieldgrp
+			= f.label "SEO Image URL"
+			= f.text_field :seo_image
 		br
 		= f.text_area :body, class: 'ckeditor'
 		br
